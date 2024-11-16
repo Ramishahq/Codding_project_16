@@ -1,13 +1,15 @@
+//addproductform.jsx
+
 import React, { useState } from 'react';
 
 function AddProductForm({ addProduct }) { 
-    /* includes all information needed to create a new product */
+    
     const [id, setId] = useState('');
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
 
-    // Handle changes in form fields and update state
+    // Handle changes in form and update 
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (name === 'id') setId(value);
@@ -16,15 +18,16 @@ function AddProductForm({ addProduct }) {
         if (name === 'description') setDescription(value);
     };
 
-    // Handle form submission
+    // Handle submission
     const handleSubmit = (event) => {
         event.preventDefault();
         
         if (name && price && description) {
+            
             // Create a new product and pass it to the parent component
             addProduct({ id, name, price: parseFloat(price), description });
 
-            // Reset form fields
+            // Reset  fields
             setId('');
             setName('');
             setPrice('');

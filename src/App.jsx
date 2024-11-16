@@ -18,7 +18,7 @@ function App() {
     <>
       <h1>Product Dashboard</h1>
       <ProductList products={products} />
-
+      <AddProductForm addProduct={addProduct} />
     </>
   );
 }

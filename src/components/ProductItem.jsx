@@ -1,3 +1,5 @@
+//productitem.jsx
+
 import React from 'react';
 
 function ProductItem({ product }) {
