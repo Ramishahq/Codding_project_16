@@ -8,5 +8,4 @@ function ProductItem({ product }) {
         </li>
     );
 }
-
 export default ProductItem;
