@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import ProductList from './components/ProductList';
+import AddProductForm from './components/AddProductForm.jsx';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Eyeshadow', price: 15, description: 'A vibrant eyeshadow palette with multiple colors.' },
+    { id: 2, name: 'Foundation', price: 25, description: 'Long-lasting liquid foundation for smooth coverage.' },
+    { id: 3, name: 'Lipstick', price: 10, description: 'Matte lipstick with rich color and moisturizing feel.' },
+  ]);
+  const addProduct = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Product Dashboard</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ProductList products={products} />
+      <AddProductForm addProduct={addProduct} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
