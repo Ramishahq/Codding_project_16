@@ -9,6 +9,7 @@ function App() {
     { id: 2, name: 'Foundation', price: 25, description: 'Long-lasting liquid foundation for smooth coverage.' },
     { id: 3, name: 'Lipstick', price: 10, description: 'Matte lipstick with rich color and moisturizing feel.' },
   ]);
+
   const addProduct = (newProduct) => {
     setProducts([...products, newProduct]);
   };
@@ -17,9 +18,10 @@ function App() {
     <>
       <h1>Product Dashboard</h1>
       <ProductList products={products} />
-      <AddProductForm addProduct={addProduct} />
+
     </>
   );
 }
+
 
 export default App;
