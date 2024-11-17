@@ -16,9 +16,17 @@ function App() {
 
   return (
     <>
+      <div className="App">
       <h1>Product Dashboard</h1>
-      <ProductList products={products} />
-      <AddProductForm addProduct={addProduct} />
+      <div className="ProductList-container">
+        <ProductList products={products} />
+      </div>
+      <div className="AddProductForm-container">
+        <AddProductForm addProduct={addProduct} />
+      </div>
+    </div>
+
+
     </>
   );
 }
